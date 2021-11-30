@@ -1,5 +1,4 @@
 import './style.css';
-import { DomHelper } from './DomHelper'
 
 (()=>{
     const content = document.getElementById("content");
@@ -7,6 +6,7 @@ import { DomHelper } from './DomHelper'
     const createNavBar = ()=>{
         const nav = document.createElement("nav");
         const navItems = document.createElement("ul");
+        navItems.classList.add("navbar");
 
         nav.appendChild(navItems);
         createNavListItems(navItems);
