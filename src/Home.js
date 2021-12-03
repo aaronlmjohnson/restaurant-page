@@ -13,7 +13,10 @@ export const Home = (()=>{
 
     const _createVideo = ()=>{
         const video = document.createElement("video");
-        console.log("hi");
+        video.autoplay = true;
+        video.loop = true;
+        video.muted = true;
+        video.id = "cover-video"
         const source = document.createElement("source");
         source.src = coverVid;
 
