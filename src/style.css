@@ -124,7 +124,32 @@ nav {
     grid-column: span 3;
 }
 
+.top-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
 .top-section h1 {
     font-size: 48px;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.bottom-section {
+    display: grid;
+    height: 60vh;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#beer {
+    background: yellow;
+}
+
+#wings {
+    background: brown;
+}
+
+#potato {
+    background: rgb(243, 200, 150);
 }

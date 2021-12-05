@@ -19,10 +19,7 @@ module.exports = {
       },
       {
         test: /\.(ogg|mp4|wav)$/i,
-        use: 'file-loader',
-        options: {
-          name: "[name].[hash].[ext]"
-        }
+        use: 'file-loader'
       },
     ],
   },
