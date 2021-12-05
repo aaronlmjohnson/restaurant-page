@@ -1,4 +1,7 @@
 import coverVid from './coverVideo.mp4';
+import beer from './beer.jpg';
+import wings from './wings.jpg';
+import potato from './potato.jpg';
 
 export const Home = (()=>{
     const content = document.getElementById("content");
@@ -6,7 +9,7 @@ export const Home = (()=>{
         const container = document.createElement("div");
         container.id = "video-container";
         const video = _createVideo();
-
+    
         container.appendChild(video);
         content.appendChild(container);
     };
@@ -50,25 +53,22 @@ export const Home = (()=>{
     const _bottomFoodSection = ()=>{
         const section = document.createElement("div");
         section.classList.add("bottom-section");
-
-        const images = ["beer", "wings", "potato"];
-
-        images.forEach((img)=>{
-            const imgElement = document.createElement("div");
-            imgElement.id = img;
-            imgElement.innerText = img;
-            section.appendChild(imgElement);
-        });
         
-        // const beerImg = document.createElement("div");
-        // beerImg.id = "beer";
-        // const wingsImg = document.createElement("div");
-        // wingsImg.id = "wings";
-        // const potatoImg = document.createElement("div");
-        // potatoImg.id = "potato";
+        const images = {beer, wings, potato};
+
+        for(const img in images){
+            const imgDiv = document.createElement("div");
+            const imgElement = document.createElement("img");
+            imgElement.id = img;
+            imgElement.src = images[img];
+
+            imgDiv.appendChild(imgElement);
+            section.appendChild(imgDiv);
+        };
 
         return section;
     };
+
     _createVideoContainer();
     _createFoodSection();
 })();
