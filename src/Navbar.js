@@ -3,7 +3,7 @@ import Logo from './logo.png';
 export const Navbar = (()=>{
     const content = document.getElementById("content");
 
-    const _createNavBar = ()=>{
+    const build = ()=>{
         const nav = document.createElement("nav");
         const navItems = document.createElement("ul");
         navItems.classList.add("navbar");
@@ -16,7 +16,7 @@ export const Navbar = (()=>{
     
     const _createNavListItems = (navItems)=>{
         
-        ["Home", "Menu", "About", "Contact"].forEach((item)=>{
+        ["Home", "Menu", "Contact"].forEach((item)=>{
             const navItem = document.createElement("li");
             const link = document.createElement("a");
             link.innerText = item;
@@ -36,6 +36,8 @@ export const Navbar = (()=>{
         parent.appendChild(logoDiv);
 
     }
+    return {
+        build
+    }
 
-    _createNavBar();
 })();

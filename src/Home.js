@@ -5,13 +5,29 @@ import potato from './potato.jpg';
 
 export const Home = (()=>{
     const content = document.getElementById("content");
+    
+
+    const build = ()=>{ 
+        content.appendChild(_createHome());
+    };
+
+    const _createHome = ()=>{
+        const homeContainer = document.createElement("div");
+        homeContainer.id = "home";
+
+        homeContainer.appendChild(_createVideoContainer());
+        homeContainer.appendChild(_createFoodSection());
+
+        return homeContainer;
+    }
+
     const _createVideoContainer = ()=>{
         const container = document.createElement("div");
         container.id = "video-container";
         const video = _createVideo();
     
         container.appendChild(video);
-        content.appendChild(container);
+        return container;
     };
 
     const _createVideo = ()=>{
@@ -37,7 +53,7 @@ export const Home = (()=>{
         
         section.appendChild(topSection);
         section.appendChild(bottomSection);
-        content.appendChild(section);
+        return section;
     };
 
     const _topFoodSection = ()=>{
@@ -69,6 +85,9 @@ export const Home = (()=>{
         return section;
     };
 
-    _createVideoContainer();
-    _createFoodSection();
+    return {
+        build
+    }
+
+    
 })();
