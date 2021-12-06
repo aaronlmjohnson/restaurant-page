@@ -119,6 +119,7 @@ nav {
     height: 100vh;
     background: black;
     grid-column: span 3;
+
 }
 
 .top-section {
@@ -126,6 +127,8 @@ nav {
     justify-content: center;
     align-items: center;
     height: 40vh;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 .top-section h1 {
     font-size: 48px;
@@ -137,6 +140,7 @@ nav {
     display: grid;
     height: 60vh;
     grid-template-columns: repeat(3, 1fr);
+    
 }
 
 .bottom-section img{
@@ -147,8 +151,10 @@ nav {
 
 #menu {
     background: yellow;
+    height: 100vh;
 }
 
 #contact {
     background: cyan;
+    height: 100vh;
 }

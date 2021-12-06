@@ -84,9 +84,14 @@ export const Home = (()=>{
 
         return section;
     };
+    const remove = ()=>{
+        const home = document.getElementById("home");
+        home.remove();
+    }
 
     return {
-        build
+        build,
+        remove
     }
 
     

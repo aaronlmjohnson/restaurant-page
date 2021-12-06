@@ -5,11 +5,17 @@ export const Contact = (()=>{
     const build = ()=>{
         const section = document.createElement("div");
         section.id = "contact";
-        content.appendChild(content);
+        content.appendChild(section);
     };
 
+    const remove = ()=>{
+        const contact = document.getElementById("contact");
+        contact.remove();
+    }
+
     return {
-        build
+        build,
+        remove
     }
 
     

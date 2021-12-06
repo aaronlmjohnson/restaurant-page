@@ -19,6 +19,7 @@ export const Navbar = (()=>{
         ["Home", "Menu", "Contact"].forEach((item)=>{
             const navItem = document.createElement("li");
             const link = document.createElement("a");
+            link.className = "nav-item";
             link.innerText = item;
             link.href = "#";
             navItem.appendChild(link)

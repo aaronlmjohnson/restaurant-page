@@ -5,11 +5,17 @@ export const Menu = (()=>{
     const build = ()=>{
         const section = document.createElement("div");
         section.id = "menu";
-        content.appendChild(content);
+        content.appendChild(section);
     };
 
+    const remove = ()=>{
+        const menu = document.getElementById("menu");
+        menu.remove();
+    }
+
     return {
-        build
+        build,
+        remove
     }
 
     
