@@ -51,16 +51,23 @@ table {
 
 :root {
     --main-color: #871700;
+    --monochromatic: #ba1f002a;
     --secondary-color: #875B00;
     --tertiary-color: #708700;
-  }
+    --tertiary-color-light: #70870034;
+  } 
 
 body {
-    color: white;
+    background: var(--monochromatic);
+    height: 100%;
+    margin: 0;
 }
 
 #content {
-
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
 }
 
 nav {
@@ -101,7 +108,7 @@ nav {
 }
 
 .navbar a:hover {
-    color: var(--secondary-color);
+    color: var(--tertiary-color);
 }
 
 #video-container {
@@ -117,7 +124,7 @@ nav {
 
 #food-section {
     height: 100vh;
-    background: black;
+    background: var(--main-color);
     grid-column: span 3;
 
 }
@@ -127,13 +134,15 @@ nav {
     justify-content: center;
     align-items: center;
     height: 40vh;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    border-top: 3px solid var(--tertiary-color);
+    border-bottom: 3px solid var(--tertiary-color);
+    box-sizing: border-box;
 }
 .top-section h1 {
     font-size: 48px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    color: var(--tertiary-color);
 }
 
 .bottom-section {
@@ -150,11 +159,39 @@ nav {
 }
 
 #menu {
-    background: yellow;
+    background: var(--monochromatic);
     height: 100vh;
 }
 
 #contact {
-    background: cyan;
-    height: 100vh;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 60vh;
+    margin: 7% 20%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-left h2 {
+    
+    font-size: 20px;
+    font-weight: bold;
+   
+
+}
+
+#contact-left p {
+    
+}
+
+footer {
+    background: var(--main-color);
+    padding: 50px 0;
+    width: 100%;
 }

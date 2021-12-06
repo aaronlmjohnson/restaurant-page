@@ -3,19 +3,21 @@ import { Navbar } from './Navbar'
 import { Home } from './Home'
 import { Menu } from './Menu'
 import { Contact } from './Contact'
+import { Footer } from './Footer'
 
-//import html from "./file.html";
-   
+(()=>{
     Navbar.build();
-    Home.build();
-    let activePage = "Home";
+    Contact.build();
+    Footer.build();
+
+    let activePage = "Contact";
     let navLinks = [...document.getElementsByClassName('nav-item')];
 
     const setActivePage = (e, link)=>{
         
         if(link.innerHTML == activePage)
             return;
-        removeCurrentPage();
+        removeActivePage();
         activePage = link.innerHTML;
         
         if(activePage == "Home")
@@ -27,7 +29,7 @@ import { Contact } from './Contact'
 
     }
 
-    const removeCurrentPage = ()=>{
+    const removeActivePage = ()=>{
         if(activePage == "Home")
             Home.remove();
         else if(activePage == "Menu")
@@ -40,16 +42,9 @@ import { Contact } from './Contact'
         link.addEventListener('click', (e)=>{setActivePage(e, link)})
     });
 
-    
-    
+})();
+   
 
-    
-    
-
-
-
-// Menu.build();
-// Contact.build();
     
 
 
