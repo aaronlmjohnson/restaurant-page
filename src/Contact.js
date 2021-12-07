@@ -12,6 +12,7 @@ export const Contact = (()=>{
         const contactDiv = document.createElement("div");
         contactDiv.id = "contact";
         contactDiv.appendChild(contactLeft());
+        contactDiv.appendChild(contactRight());
         return contactDiv;
 
     };
@@ -24,6 +25,7 @@ export const Contact = (()=>{
         h2.innerText = "Contact Us Anytime!";
         const contactUs = document.createElement("p");
         contactUs.innerText = "Need something from us? You can contact us anytime by phone, e-mail, or via the form on this page.";
+
         left.appendChild(h2);
         left.appendChild(contactUs);
         left.appendChild(contactPhone());
@@ -53,6 +55,13 @@ export const Contact = (()=>{
     };
 
     const contactRight = ()=>{
+        const right = document.createElement("div");
+        right.id = 'contact-right';
+
+        return right;
+    };
+
+    const contactForm = ()=>{
 
     };
 
