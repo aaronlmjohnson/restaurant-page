@@ -1,4 +1,4 @@
-
+import { Form } from "./Form"
 
 export const Contact = (()=>{
     const content = document.getElementById("content");
@@ -58,11 +58,14 @@ export const Contact = (()=>{
         const right = document.createElement("div");
         right.id = 'contact-right';
 
+        right.append(contactForm());
         return right;
     };
 
     const contactForm = ()=>{
+        const form = Form();
 
+        return form.get();
     };
 
     const remove = ()=>{
