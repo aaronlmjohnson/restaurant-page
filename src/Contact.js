@@ -64,7 +64,7 @@ export const Contact = (()=>{
 
     const contactForm = ()=>{
         const form = Form();
-
+        form.addLabel("name", "Name: ", "text", "user_name")
         return form.get();
     };
 
