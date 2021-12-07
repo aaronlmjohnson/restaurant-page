@@ -11,7 +11,7 @@ export const Form = ((action = "#", method = "#")=>{
         form.appendChild(ul);
         form.action = _action;
         form.method = _method;
-        console.log(form.getElementsByTagName("ul")[0]);
+
         return form;
     }
 
@@ -22,7 +22,10 @@ export const Form = ((action = "#", method = "#")=>{
         const li = document.createElement("li");
         const label = _createLabel(forInput, labelName);
         
-        const input = _createInput(forInput, type, name);
+        
+        const input = type != "textarea" ?_createInput(forInput, type, name) :
+                      _createTextArea(forInput, name, 4, 25);
+        
         li.appendChild(label);
         li.appendChild(input);
 
@@ -40,13 +43,24 @@ export const Form = ((action = "#", method = "#")=>{
     const _createInput = (id, type, name)=>{
         if(!_validInputs.includes(type))
             return;
+        
         const input = document.createElement("input");
         input.type = type;
         input.id = id;
         input.name = name;
-
+        
         return input;
         
+    };
+
+    const _createTextArea = (id, name, rows, cols)=>{
+        const area = document.createElement("textarea");
+        area.id = id;
+        area.name = name;
+        area.rows = rows;
+        area.cols = cols;
+
+        return area;
     };
 
     const get = () =>{
