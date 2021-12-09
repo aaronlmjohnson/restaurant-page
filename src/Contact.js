@@ -68,6 +68,8 @@ export const Contact = (()=>{
         form.addLabel("email", "Email Address: ", "email", "user_email");
         form.addLabel("phone", "Phone: ", "tel", "user_phone");
         form.addLabel("message", "Message: ", "textarea", "user_message");
+        form.addSubmit();
+
 
         return form.get();
     };

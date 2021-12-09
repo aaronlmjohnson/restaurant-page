@@ -45,13 +45,29 @@ export const Form = ((action = "#", method = "#")=>{
             return;
         
         const input = document.createElement("input");
+        // if(type == "text" || type == "email" || type == "tel"){
+        //     input.maxLength = "1";
+        //     input.size = "50";
+        // }
         input.type = type;
         input.id = id;
-        input.name = name;
+        if(type == "submit")
+            input.value = type;
+        else
+            input.name = name;
         
         return input;
         
     };
+
+    const addSubmit = () =>{
+        const submit = _createInput("submit", "submit",  "submit");
+        const li = document.createElement("li");
+        li.appendChild(submit);
+        const ul = _form.getElementsByTagName("ul")[0];
+        ul.appendChild(li);
+
+    }
 
     const _createTextArea = (id, name, rows, cols)=>{
         const area = document.createElement("textarea");
@@ -63,13 +79,15 @@ export const Form = ((action = "#", method = "#")=>{
         return area;
     };
 
+
     const get = () =>{
         return _form;
     };
 
     return {
         get,
-        addLabel
+        addLabel,
+        addSubmit
     }
 
     
