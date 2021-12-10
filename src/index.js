@@ -7,10 +7,10 @@ import { Footer } from './Footer'
 
 (()=>{
     Navbar.build();
-    Contact.build();
+    Menu.build();
     Footer.build();
 
-    let activePage = "Contact";
+    let activePage = "Menu";
     let navLinks = [...document.getElementsByClassName('nav-item')];
 
     const setActivePage = (e, link)=>{
