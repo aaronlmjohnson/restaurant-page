@@ -52,7 +52,7 @@ export const Form = ((action = "#", method = "#")=>{
         input.type = type;
         input.id = id;
         if(type == "submit")
-            input.value = type;
+            input.value = "Submit";
         else
             input.name = name;
         
@@ -92,3 +92,4 @@ export const Form = ((action = "#", method = "#")=>{
 
     
 });
+

@@ -1,7 +1,7 @@
-import coverVid from './coverVideo.mp4';
-import beer from './beer.jpg';
-import wings from './wings.jpg';
-import potato from './potato.jpg';
+import coverVid from './assets/images/coverVideo.mp4';
+import beer from './assets/images/beer.jpg';
+import wings from './assets/images/wings.jpg';
+import potato from './assets/images/potato.jpg';
 
 export const Home = (()=>{
     const content = document.getElementById("content");

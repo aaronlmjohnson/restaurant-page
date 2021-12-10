@@ -1,4 +1,4 @@
-import Logo from './logo.png';
+import Logo from './assets/images/logo.png';
 
 export const Navbar = (()=>{
     const content = document.getElementById("content");
