@@ -68,6 +68,7 @@ body {
     flex-direction: column;
     align-items: stretch;
     min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -237,20 +238,31 @@ input[type="text"], input[type="email"], input[type="tel"]{
     font-size: 72px;
     grid-column: 2;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    
     justify-self: center;
     margin: 100px 0;
 }
 
 #menu-items {
     grid-column: 2;
-    height: 100vh;  
     text-align: center;
 }
 
 .menu-item {
-    height: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu-img {
+    max-height: 100%;
+    max-width: 50%;
     object-fit: contain;
+}
+
+.menu-item-title {
+    margin: 32px 0;
+    font-size: 32px;
 }
 
 footer {

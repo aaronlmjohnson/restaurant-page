@@ -1,8 +1,8 @@
-import beer from './assets/images/beer.png';
-import salad from './assets/images/salad.png';
-import hamburger from './assets/images/hamburger.png';
-import wings from './assets/images/wings.png';
-import steak from './assets/images/steak.png';
+import Beer from './assets/images/beer.png';
+import Salad from './assets/images/salad.png';
+import Hamburger from './assets/images/hamburger.png';
+import Wings from './assets/images/wings.png';
+import Steak from './assets/images/steak.png';
 
 export const Menu = (()=>{
     const content = document.getElementById("content");
@@ -30,18 +30,45 @@ export const Menu = (()=>{
     const _createMenuItems = ()=>{
         const menuItems = document.createElement("div");
         menuItems.id = "menu-items";
-        const item = _createMenuItem(beer);
+        //const item = _createMenuItem(beer, "Beer");
 
-        menuItems.appendChild(item);
+        const items = {Hamburger, Salad, Beer, Wings, Steak};
+
+        for(const item in items){
+            const menuItem = _createMenuItem(items[item], item);
+            menuItems.appendChild(menuItem);
+        }
+
+        //menuItems.appendChild(item);
         return menuItems;
     };
 
-    const _createMenuItem = (src)=>{
+    const _createMenuItem = (src, itemName)=>{
+        const itemDiv = document.createElement("div");
+        itemDiv.classList.add("menu-item");
+        
+
+        itemDiv.appendChild(_createMenuImg(src));
+        itemDiv.appendChild(_createMenuTitle(itemName));
+        
+
+        return itemDiv;
+    };
+
+    const _createMenuImg = (src)=>{
         const item = document.createElement("img") ;
-        item.classList.add("menu-item");
+        item.classList.add("menu-img");
         item.src = src;
 
-        return item;
+        return item
+    };
+
+    const _createMenuTitle = (itemName) =>{
+        const title = document.createElement("h3");
+        title.classList.add("menu-item-title");
+        title.innerText = itemName;
+
+        return title
     };
 
     const remove = ()=>{
